@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUsers } from '../hooks/useUsers';
+import Filter from './Filter';
 
 function Users() {
 	const { error, loading, data } = useUsers();
@@ -9,6 +10,7 @@ function Users() {
 
 	return (
 		<div className='users'>
+			<Filter />
 			{data.users.map((user, i) => {
 				return (
 					<div key={i}>

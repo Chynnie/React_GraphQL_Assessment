@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTransactions } from '../hooks/useTransactions';
+import Filter from './Filter';
 
 function Transactions() {
 	const { error, loading, data } = useTransactions();
@@ -9,7 +10,7 @@ function Transactions() {
 
 	return (
 		<div className='transactions'>
-			<button className='users-btn'>All Users</button>
+			<Filter />
 			{data.transactions.map((transaction, i) => {
 				return (
 					<div key={i}>
